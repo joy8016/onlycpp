@@ -5,13 +5,13 @@ class Node{
     public:
     int val;
     Node* next;
-    Node* tail;
+   
 
 
     Node(int value){
         val = value;
         next = nullptr;
-        tail = nullptr;
+        
     }
 
 };
@@ -34,11 +34,13 @@ void insertAtTail(Node* &head, int data ){
     
 }
 
-void deletenode(Node* head){
-    Node* temp = head;
+// void deletenode(Node* head){
+//     Node* temp = head;
     
 
-}
+// }
+
+
 
 void display(Node* head){
     Node* temp = head;
@@ -48,17 +50,82 @@ void display(Node* head){
     }
     cout<<"NULL"<<endl;
 }
+// void deletealternatenode(Node* &head){
+//     Node* curr_node = head;
+//     while(curr_node!=nullptr && curr_node->next!=nullptr){
+//         Node* temp = curr_node->next;
+//         curr_node->next = curr_node->next->next;
+//         free(temp);
+//         curr_node = curr_node->next;
+//     }
+// }
+
+
+//reverse the linked list
+
+Node* reversell(Node* &head){
+    Node* prev = nullptr;
+    Node* curr = head;
+    
+    while(curr!=nullptr){
+        Node* next = curr->next;
+
+        curr->next = prev;
+        
+        prev= curr;
+        curr = next;
+       
+    }
+    Node* newhead = prev;
+   
+    return newhead;
+}
+
+void reverse(Node* &head){
+    if(head==nullptr){
+        return;
+    } 
+
+    
+        reverse(head->next);
+        cout<<head->val<<"->"<<endl;
+
+    
+}
+
+
+Node* reverselinkedlist(Node* &head){
+
+    //base case
+
+    if(head==nullptr || head->next==nullptr){
+        return head;
+    }
+
+    Node* new_node = reverselinkedlist(head->next);
+
+    head->next->next = head;
+    head->next = nullptr;
+    return new_node;
+}
 
 int main(){
     Node* head = nullptr;
     
-    insertAtHead(head, 3);
-    insertAtHead(head, 4);
+    insertAtHead(head,2);
+    insertAtHead(head,1);
+    insertAtHead(head,4);
+    insertAtHead(head,5);
+    insertAtHead(head,2);
+    insertAtHead(head,9);
     display(head);
-    insertAtHead(head, 5);
-    insertAtHead(head, 6);
-    insertAtHead(head, 7);
-    insertAtTail(head, 8);
+    
+    // reverse(head);
+    // display(head);
+    // head = reversell(head);
+    // display(head);
+
+    head = reverselinkedlist(head);
     display(head);
     
 
