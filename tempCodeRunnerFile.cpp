@@ -1,1 +1,1 @@
-cout<<preflen;
+vector<int>::iterator it = v.begin();
