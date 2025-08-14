@@ -1,8 +1,8 @@
-// // #include<bits/stdc++.h>
-// // using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
-// // int main(){
-// //     vector<int>v;
+int main(){
+    // vector<int>v;
     
 // //     v.push_back(1);
 // //     v.emplace_back(2);
@@ -99,5 +99,130 @@
 
 
 
+
+    // deque<string>fruit = {"apple", "orange", "lichi"};
+
+    // for(int i = 0; i<fruit.size(); i++){
+    //     cout<<fruit[i]<<" "<<endl;
+    // }
    
-// // return 0;
+
+    // fruit.push_front("guahava");
+    // for(int i = 0; i<fruit.size(); i++){
+    //     cout<<fruit[i]<<" ";
+    // }
+
+    // cout<<fruit.at(0)<<endl;
+
+    // // cout<<fruit.begin();
+
+    // fruit.pop_back();
+    // for(int i = 0; i<fruit.size(); i++){
+    //     cout<<fruit[i]<<" ";
+    // }
+
+
+    // stack<string>st;
+
+    // st.push("(");
+    // st.push(")");
+    // st.push("}");
+    // st.push("{");
+    // st.push("[");
+    // st.push("]");
+    // cout<<st.size()<<endl;
+    
+
+
+    // while(!st.empty()){
+    //     cout<<st.top()<<" ";
+    //     st.pop();
+    // }
+    // cout<<!st.empty();
+
+    
+
+
+
+    // queue<string>q;
+
+    // q.emplace("lamborgini");
+    // q.emplace("marcedes");
+    // while(!q.empty()){
+    //     cout<<q.front()<<" "<<endl;
+    //     q.pop();
+    // }
+
+    // q.push("volskwagan");
+    // q.push("rolls royace");
+    // q.pop();
+
+    // while(!q.empty()){
+    //     cout<<q.front()<<" ";
+    //     q.pop();
+    // }
+
+    // deque<string>dq;
+    // dq.assign(2);
+    // while(!dq.empty()){
+    //     cout<<dq.front();
+    //     dq.pop_front();
+    // }
+    
+
+
+    // priority_queue<string>pq ; 
+
+    // // priority_queue<string, vector<string>, greater<string>>pq;
+
+    // pq.emplace("ford");
+    // pq.emplace("lamborgini");
+    // pq.push("farari");
+    // pq.emplace("jaguar");
+    // while(!pq.empty()){
+    //     cout<<pq.top()<<" ";
+    //     pq.pop();
+    // }
+
+    // stack<int>st;
+    // queue<int>q;
+    // vector<int>v;
+    // set<string>st;
+    // st.insert("joy");
+    // st.insert("uma");
+    // st.insert("deb");
+    // st.insert("bijay");
+    // st.insert("bijay");
+     
+
+    // for(int i = st.begin(); i<st.end(); i++){
+    //     cout<<i<<" ";
+    // }
+
+
+    set<string>st = {"volvo", "ford", "bmw", "mazda"};
+    
+
+    // set<string>::iterator it = st.begin();
+
+    // it++;
+    // cout<<*(it)<<" "<<endl;
+
+    // list<int>l = {1,4,5,6,7};
+    // cout<<l.begin();
+     
+
+
+    
+   
+  
+   st.erase("ford");
+
+
+   for(auto i = st.begin(); i!=st.end(); i++){
+    cout<<*i<<" ";
+   }
+
+   
+    return 0;
+}
