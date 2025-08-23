@@ -236,22 +236,81 @@ int main()
     //         cout<<"the num is 0 and it is neither positive not negative:"<<num;
     // }
 
-    int num;
-    cout << "enter the number:";
-    cin >> num;
+    // int num;
+    // cout << "enter the number:";
+    // cin >> num;
 
-    // (num%2==0)?cout<<"the number is even:"<<num:cout<<"the nunber is odd:"<<num;
+    // // (num%2==0)?cout<<"the number is even:"<<num:cout<<"the nunber is odd:"<<num;
 
-    if (num % 2 == 0)
-    {
-        cout << "the number is:" << num<<endl;
+    // if (num % 2 == 0)
+    // {
+    //     cout << "the number is:" << num<<endl;
+    // }
+    // else if (num % 2 != 0)
+    // {
+    //     cout << "the number is odd:"<<endl;
+    // }
+
+    // cout << "this line is always printed";
+    
+
+    // pattern
+    // int n;
+    // cout<<"enter the number:";
+    // cin>>n;
+
+    // for(int i =n; i>=1; i--){
+    //     for(int j = i; j>0; j--){
+    //         cout<<"* ";
+    //     }
+    //     cout<<endl;
+    // }
+    
+
+    //i=1,2,3,4,5,6
+    
+    //k=4,3,2,1,0
+    //j=6
+    //    *
+    //   **
+    //  ***
+    // ****
+    //*****
+
+
+    
+    // for(int i = 0; i<n; i++){
+    //     for(int k = n-i; k>0; k--){
+    //         cout<<" ";
+    //     }
+    //     for(int j = 1; j<=i; j++){
+    //         cout<<"*";
+    //     }
+
+    //     cout<<endl;
+
+    // }
+    
+
+    //i = 1
+    //j=1
+    //k = 0
+
+    // *****
+    // 
+
+   int n ;
+   cout<<"enter the number:";
+   cin>>n;
+
+   for(int i = n; i>0; i--){
+    for(int k=0; k<=n; k++){
+        cout<<" ";
     }
-    else if (num % 2 != 0)
-    {
-        cout << "the number is odd:"<<endl;
+    for(int j=1; j<=i; j++){
+        cout<<"* ";
     }
-
-    cout << "this line is always printed";
-
+    cout<<endl;
+   }
     return 0;
 }
