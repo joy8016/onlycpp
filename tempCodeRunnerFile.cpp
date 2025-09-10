@@ -1,1 +1,2 @@
-vector<int>::iterator it = v.begin();
+ st.pop();
+    st.pop();
