@@ -1,95 +1,95 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class heap{
-    public:
-    int arr[100];
-    int size;
+class heap
+{
 
-    heap(){
-        arr[0]=-1;
-        size = 0;
+    int *arr;
+    int elements;       // total elements in h
+    int total_elements; // total elements of array
+
+public:
+    heap(int n)
+    {
+        arr = new int(n);
+        elements = 0;
+        total_elements = n;
     }
 
-    void push(int val){
-        size +=1;
-        int index = size;
-        arr[index]=val;
-
-        while (index>1)
+    // create insertion function
+    void insert(int value)
+    {
+        // edge case
+        if (elements == total_elements)
         {
-            int parent = index/2;
-            if(arr[parent] < arr[index]){
-                swap(arr[parent], arr[index]);
-                index = parent;
-            }
-            else{
-                return;
-            }
+            cout << "h is overflow"<<endl;
         }
-        
+
+        arr[elements] = value;
+        int index = elements;
+        elements++;
+
+        // check if child node greater than patent node
+
+        while (index > 0 && arr[(index - 1) / 2] < arr[index])
+        {
+            swap(arr[index], arr[(index - 1) / 2]);
+            index = (index - 1) / 2;
+        }
+        cout << "this element are inserted in h: " << arr[index] << endl;
+    }
+
+    void heapift(){
+        int largest = index;
+        int left = 2*index+1;
+        int right = 2*index+2;
+
+        if(left<elements && arr[left]>arr[largest]){
+            largest = left;
+
+        }
+        if(right<elements & arr[right]>arr[largest]){
+            largest = right;
+        }
+    }
+
+    void delete(){
+        if(elements == 0){
+            return 0;
+        }
+
+       
+        arr[0]=arr[elements-1];
+        elements--;
+
+        heapify(0);
+
 
     }
 
     void print(){
-        for(int i = 1; i<=size; i++){
-            cout<<arr[i]<<" ";
+        for(int i =0; i<total_elements; i++){
+            cout<<"-> "<<arr[i]<<" ";
         }
-        cout<<endl;
     }
-
-    void deleteFromheap(){
-        if(size == 0){
-            cout<<" nothing to delete"<<endl;
-            return;
-        }
-
-        //put last element in to first;
-        arr[1] = arr[size];
-        size--;
-
-
-        int i = 1;
-
-        while (i<size)
-        {
-            int leftIndex = 2*i;
-            int rightIndex = 2*i+1;
-
-            if(arr[leftIndex]>arr[i]){
-                swap(arr[i], arr[leftIndex]);
-                i = leftIndex;
-            }
-            else if(arr[rightIndex] > arr[i]){
-                swap(arr[i], arr[rightIndex]);
-                i = rightIndex;
-            }
-            else{
-                return;
-            }
-        }
-        
-    }
-
-    
-
 };
 
-int main(){
+int main()
+{
 
-    heap h;
-    h.push(23);
-    h.push(50);
-    h.push(70);
-    h.push(34);
-    h.push(80);
-    h.push(40);
-    h.push(50);
-
-
+    heap h(10);
+    h.insert(23);
+    h.insert(12);
+    h.insert(34);
+    h.insert(45);
+    h.insert(21);
+    h.insert(4);
+    h.insert(5);
+    h.insert(1);
+    h.insert(2);
+    h.print();
+    h.insert(200);
     h.print();
 
-    h.deleteFromheap();
-    h.print();
     return 0;
 }

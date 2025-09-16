@@ -21,7 +21,7 @@ bool isOperator(char x){
     }
     return false;
 
-}
+} 
 
 string postToPrfix(string postfix){
 
