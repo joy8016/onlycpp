@@ -20,4 +20,4 @@ int main(){
     cout<<smallest(v);
     return  0;
     
-}
+}he
