@@ -1,46 +1,58 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node
+class tree
 {
 public:
     int data;
-    Node *left, *right;
 
-    Node(int data)
+    tree *left, *right;
+    tree(int val)
     {
-        this->data = data;
+        data = val;
         left = right = nullptr;
     }
 };
 
-Node *binaryTree()
-{
-    int x;
-    cin >> x;
-    if (x == -1)
-    {
-        return nullptr;
-    }
 
-    Node *temp = new Node(x);
 
-    // left side node
-    cout << "left side node:" << x;
-    temp->left = binaryTree();
-
-    // right node
-    cout << "enter the right side node:" << x;
-
-    temp->right = binaryTree();
-
-    return temp;
-}
 int main()
 {
+    int x;
+    cout << "enter the root node:";
+    cin >> x;
+    int first, second;
+    queue<tree *> q;
+    tree *root = new tree(x);
+    q.push(root);
 
-    cout << "enter the root value:";
-    Node *root;
-    root = binaryTree();
-    return 0;
+    while (!q.empty())
+    {
+        tree *temp = q.front();
+        q.pop();
+        cout << "enter the left node of " << temp->data<< ":";
+
+        cin >> first;
+
+        // for left node
+        if (first != -1)
+        {
+            temp->left = new tree(first);
+            q.push(temp->left);
+        }
+
+        // for right node
+        cout << "enter the right node of " << temp->data<< ":";
+
+        cin >> second;
+
+        if (second != -1)
+        {
+            temp->right = new tree(second);
+            q.push(temp->right);
+        }
+    }
+
+ 
+   return 0;
 }
